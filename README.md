@@ -1,4 +1,6 @@
-# Pakemon Lite Auto Poster
+# Lazypost 1.0 Lite
+
+![Lazypost 1.0 banner](banner.png)
 
 Standalone no-OpenAI Facebook Page auto poster.
 
@@ -6,7 +8,7 @@ Built by **Vincent Ilagan**.
 
 ## What It Does
 
-Pakemon Lite Auto Poster creates branded Facebook Page posts without using OpenAI credits.
+Lazypost 1.0 Lite creates branded Facebook Page posts without using OpenAI credits.
 
 It uses:
 

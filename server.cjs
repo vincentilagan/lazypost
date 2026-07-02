@@ -56,7 +56,7 @@ async function getGoogleTrends({ geo = "PH", limit = 10 }) {
   const rssUrl = `https://trends.google.com/trending/rss?geo=${encodeURIComponent(geo)}`;
   const response = await fetch(rssUrl, {
     headers: {
-      "user-agent": "Mozilla/5.0 PakemonLite/1.0"
+      "user-agent": "Mozilla/5.0 Lazypost/1.0"
     }
   });
   if (!response.ok) throw new Error(`Google Trends failed: ${response.status}`);
@@ -84,7 +84,7 @@ async function proxyImage(res, imageUrl) {
   if (!["http:", "https:"].includes(parsed.protocol)) throw new Error("Invalid image URL");
   const response = await fetch(parsed, {
     headers: {
-      "user-agent": "Mozilla/5.0 PakemonLite/1.0"
+      "user-agent": "Mozilla/5.0 Lazypost/1.0"
     }
   });
   if (!response.ok) throw new Error(`Image download failed: ${response.status}`);
@@ -105,7 +105,7 @@ async function postFacebookPhoto({ pageId, token, version, caption, imageDataUrl
   const form = new FormData();
   form.append("access_token", token);
   form.append("caption", caption || "");
-  form.append("source", dataUrlToBlob(imageDataUrl), "pakemon-lite.png");
+  form.append("source", dataUrlToBlob(imageDataUrl), "lazypost-lite.png");
 
   const apiVersion = version || "v25.0";
   const response = await fetch(`https://graph.facebook.com/${apiVersion}/${pageId}/photos`, {
@@ -160,5 +160,5 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Pakemon Lite Poster running at http://localhost:${PORT}`);
+  console.log(`Lazypost 1.0 Lite running at http://localhost:${PORT}`);
 });

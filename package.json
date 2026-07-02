@@ -1,5 +1,5 @@
 {
-  "name": "pakemon-lite-auto-poster",
+  "name": "lazypost-lite",
   "version": "0.1.0",
   "private": true,
   "description": "No-OpenAI Facebook Page auto poster with Google Trends image layouts and smoke testing.",

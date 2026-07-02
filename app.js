@@ -506,8 +506,8 @@ function buildCaption({ title, subtitle, topic, language, finalType }) {
   };
   const question = pick(questions[language] || questions.tagalog);
   const tags = finalType === "hugot"
-    ? "#HugotPH #RelateMuch #Pakemon #TeenHugot #SelfWorth"
-    : "#TrendingPH #Pakemon #UsapangOnline #ViralUpdate #CommentYourTake";
+    ? "#HugotPH #RelateMuch #Lazypost #TeenHugot #SelfWorth"
+    : "#TrendingPH #Lazypost #UsapangOnline #ViralUpdate #CommentYourTake";
   return `${title}\n\n${subtitle}\n\n${question}\n\n${tags}`;
 }
 
@@ -696,7 +696,7 @@ async function renderPost(copy, category, imageUrl = "") {
   }
   ctx.fillStyle = "#0f172a";
   ctx.font = "900 25px Arial";
-  ctx.fillText("Pakemon", 164, 101);
+  ctx.fillText("Lazypost", 164, 101);
   ctx.fillStyle = "#64748b";
   ctx.font = "700 16px Arial";
   ctx.fillText(usedImage ? "Google Trends image" : "Local trend-ready post", 164, 123);

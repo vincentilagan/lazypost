@@ -1,11 +1,11 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-title Pakemon Lite Auto Poster Installer
+title Lazypost 1.0 Lite Installer
 
 echo.
 echo ===============================================
-echo   Pakemon Lite Auto Poster - Installer
+echo   Lazypost 1.0 Lite - Installer
 echo ===============================================
 echo.
 
