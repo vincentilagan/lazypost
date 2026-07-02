@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pakemon Lite Poster</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="panel">
+        <div class="brand">
+          <div class="logo">PK</div>
+          <div>
+            <h1>Pakemon Lite Auto Poster</h1>
+            <p>No OpenAI cost. Facebook auto-posting.</p>
+          </div>
+        </div>
+
+        <fieldset>
+          <legend>Posting mode</legend>
+          <label><input type="radio" name="postMode" value="smoke" checked> Smoke test only</label>
+          <label><input type="radio" name="postMode" value="live"> Live post to Facebook</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Facebook page keys</legend>
+          <label class="field compact">
+            <span>Facebook Page ID</span>
+            <input id="facebookPageId" placeholder="Page ID">
+          </label>
+          <label class="field compact">
+            <span>Facebook Page token</span>
+            <input id="facebookToken" type="password" placeholder="Paste Page token">
+          </label>
+          <label class="field compact">
+            <span>Graph API version</span>
+            <input id="graphVersion" value="v25.0">
+          </label>
+          <button id="saveFacebook" type="button" class="wide">Save Facebook keys</button>
+          <p id="facebookStatus" class="hint">Facebook keys stay in this browser.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Brand logo</legend>
+          <label class="field compact">
+            <span>Upload PNG logo</span>
+            <input id="logoUpload" type="file" accept="image/png,image/jpeg,image/webp">
+          </label>
+          <button id="clearLogo" type="button" class="wide">Clear logo</button>
+          <p id="logoStatus" class="hint">No uploaded logo. Text logo will be used.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Mode</legend>
+          <label><input type="radio" name="postType" value="auto" checked> Auto mix</label>
+          <label><input type="radio" name="postType" value="trend"> Trend-style post</label>
+          <label><input type="radio" name="postType" value="hugot"> Hugot post</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Language</legend>
+          <label><input type="radio" name="language" value="tagalog" checked> Tagalog</label>
+          <label><input type="radio" name="language" value="english"> English</label>
+          <label><input type="radio" name="language" value="mix"> Mix</label>
+        </fieldset>
+
+        <label class="field">
+          <span>Country/topic bank</span>
+          <select id="country">
+            <option value="PH">Philippines</option>
+            <option value="US">United States</option>
+            <option value="AE">United Arab Emirates</option>
+            <option value="JP">Japan</option>
+            <option value="KR">South Korea</option>
+            <option value="SG">Singapore</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Optional pasted topics</span>
+          <textarea id="customTopics" rows="5" placeholder="Paste topics here, one per line. Leave blank to use built-in local topics."></textarea>
+        </label>
+
+        <fieldset>
+          <legend>Auto generator</legend>
+          <label><input id="autoRun" type="checkbox" checked> Keep posting automatically</label>
+          <label class="field compact">
+            <span>Every <b id="intervalLabel">5</b> minute(s)</span>
+            <input id="interval" type="range" min="1" max="60" value="5">
+          </label>
+        </fieldset>
+
+        <div class="buttons">
+          <button id="generate" class="primary" type="button">Start Auto Posting</button>
+          <button id="stop" type="button">Stop</button>
+        </div>
+
+        <div id="status" class="status">Ready to post.</div>
+      </aside>
+
+      <section class="workspace">
+        <div class="topbar">
+          <div>
+            <h2>Latest auto post</h2>
+            <p id="meta">No generation yet.</p>
+          </div>
+          <span class="pill">No OpenAI</span>
+        </div>
+
+        <canvas id="canvas" width="1080" height="1080" aria-label="Generated post preview"></canvas>
+        <textarea id="caption" readonly placeholder="Caption will appear here."></textarea>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

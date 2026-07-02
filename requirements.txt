@@ -1,0 +1,21 @@
+# Pakemon Lite Auto Poster requirements
+#
+# This is a standalone Node.js app.
+# It does not use OpenAI and has no paid AI dependency.
+
+Node.js >= 18 LTS
+Windows 10 or Windows 11
+Internet connection for Google Trends images and Facebook posting
+Facebook Page ID
+Facebook Page access token with pages_manage_posts permission
+
+# Install on Windows
+Double-click:
+Install Lite Auto Poster.bat
+
+# Run after install
+Double-click:
+Start Lite Poster.bat
+
+# Local URL
+http://localhost:8790
